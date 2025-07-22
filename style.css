@@ -1,0 +1,523 @@
+/* GENERAL */
+/*target the entire page using * */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+/* Reset margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set base font, background color, and default text color */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(24, 21, 21); /* Set the page background */
+    color: white;            /* Make all text white by default */
+  }
+  
+  /* Enable smooth scrolling behavior for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Add smooth transition for interactive elements (links, buttons) */
+  a, .btn {
+    transition: all 300ms ease;
+    color: rgb(56, 179, 95);
+  }
+
+  /* applies to nav and the links inside it */
+  /* tells the browser to lay out child elements like (menu links) in a row
+  instead of stacking vertically.*/
+nav, 
+.nav-links {
+    display: flex;
+}
+
+/*centers nav items vertically, spaces them out evenly, 
+and sets the nav bar height to 17% of the screen. */
+nav{
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+}
+
+.nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+/* In html, a href means make this text clickable and go to that location.
+These are edits to the links*/
+a {
+    text-decoration: none;
+    text-decoration-color: white;
+}
+/* hover over the text and it will change color*/
+a:hover {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+}
+
+.logo { /* this is a class */
+    font-size: 2rem; /* font is 2x root font size */
+    color: white;
+}
+
+/* When hovering over the logo, the cursor stays normal (not pointer) */
+.logo:hover {
+    cursor: default;
+}
+
+/* HAMBURGER MENU */
+
+/* Hide the hamburger nav by default (will show only on smaller screens with media queries) */
+#hamburger-nav {
+    display: none;
+}
+
+/* Wrapper for the hamburger icon and menu links */
+.hamburger-menu {
+    position: relative; /* Needed for positioning dropdown links later */
+    display: inline-block; /* Keeps it inline but allows width/height control */
+}
+
+/* The three-line hamburger icon itself */
+.hamburger-icon {
+    display: flex; /* Stack spans vertically */
+    flex-direction: column;
+    justify-content: space-between; /* Even spacing between lines */
+    height: 24px;
+    width: 30px;
+    cursor: pointer; /* Show pointer on hover */
+}
+
+/* Style for each line (span) inside the hamburger icon */
+.hamburger-icon span {
+    width: 100%; /* Full width of the icon container */
+    height: 3px; /* Thin line like a hamburger patty */
+    background-color: white; /* Line color */
+    transition: all 0.3s ease-in-out; /* Smooth animation when toggled */
+}
+
+/* Styles for the dropdown menu links under the hamburger icon */
+.menu-links {
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    top: 100%; /* Position right below the hamburger icon */
+    right: 0%; /* Align to the right edge */
+    background-color: transparent; /* Background of the dropdown */
+    width: fit-content; /* Shrink to fit content */
+    max-height: 0; /* Start hidden with zero height */
+    overflow: hidden; /* Hide overflowing content when closed */
+    transition: all 0.3s ease-in-out; /* Smooth open/close transition */
+}
+
+/* Styles individual links inside the .menu-links container */
+.menu-links a { /* references the actual things in menu links */
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Removes bullet points from list items */
+.menu-links li {
+    list-style: none;
+}
+
+/* Expands the menu when the "open" class is toggled on */
+.menu-links.open {
+    max-height: 300px;
+}
+/* Hamburger icon animation: Top line rotates */
+.hamburger-icon.open span:first-child{
+    transform: rotate(45deg) translate(10px, 5px);
+}
+
+/* Middle line disappears */
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+/* Bottom line rotates opposite direction */
+.hamburger-icon.open span:last-child{
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+/* Default state of hamburger lines when closed */
+.hamburger-icon span {
+    transform: none;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+/* SECTIONS */
+  /* keeps photo circular*/
+  .profile-pic {
+    width: 100%;           /* Makes the image fill the container */
+    height: 100%;
+    object-fit: cover;     /* Crops it nicely within the circle */
+  }
+  
+  /* target everything withing the section in the html file */
+  section {
+    padding-top: 4vh; /* pusts space between each section */
+    height: 88vh;
+    margin: 0 10 rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+  }
+  
+  .section-container, #profile {
+    display: flex;
+  }
+
+  #profile {
+    justify-self: center;
+    gap: 5rem;
+    height: 80vh;
+  }
+
+  .section__pic-container {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;  /* Makes sure the image doesnâ€™t spill out */
+    border-radius: 50%;   /* Makes container circular */
+    margin: auto 0;
+  }
+  
+  .section__text {
+    align-self: center;
+    text-align: center;
+  }
+
+  .section__text.p {
+    font-weight: 600;
+  }
+  .section__text__p1 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color:rgb(56, 179, 95);
+  }
+  .section__text__p2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: rgb(163, 153, 153);
+  }
+
+  .title {
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+  }
+
+  #socials-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  /* Icons */
+  /*resize icons and move t11em to correct place */
+.icon {
+    cursor: pointer;
+    height: 2rem;
+}
+
+/* Buttons */
+.btn-container{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+}
+
+.btn-color-1, .btn-color-2 {
+    border: rgb(53, 53, 53) 0.1rem solid;
+}
+.btn-color-1:hover, .btn-color-2:hover {
+    cursor: pointer;
+}
+.btn-color-1, .btn-color-2:hover {
+    background: rgb(53, 53, 53);
+    color: white;
+}
+
+.btn-color-1:hover{
+    background: rgb(0, 0, 0);
+}
+.btn-color-2{
+    background: none;
+}
+.btn-color-2:hover{
+    border: rgb(255, 255, 255) 0.1rem solid;
+}
+.btn-container{
+    gap: 1rem;
+}
+  
+/* About Section Formatting */
+#about {
+    position: relative;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+/* About section layout */
+.about-containers {
+  display: flex;
+  gap: 2rem;
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center;     /* Aligns items vertically in the middle */
+  flex-wrap: wrap;         /* Allows wrapping on smaller screens */
+}
+.about-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Aligns text to the left inside the column */
+  max-width: 600px;        /* Prevents text from stretching too far */
+}
+
+.section__pic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+.about-pic {
+  border-radius: 2rem;
+  width: 300px;  /* Match image size */
+  height: 300px;
+  object-fit: cover; 
+}
+.arrow {
+    position:absolute;
+    right: 5rem;
+    bottom: 2.5rem;
+}
+.text-container {
+    text-align: left;
+    margin-top: 2rem; /* Adds spacing between cards and text */
+}
+.details-container{
+    padding: 1.5rem;
+    flex: 1;
+    background-color: rgb(24, 21, 21);
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    text-align: center;
+}
+.section-container{
+    gap: 4rem;
+    height: 80%
+}
+  
+/* Experience section */
+
+#experience {
+    position: relative;
+}
+
+/* Experience section layout */
+.experience-containers {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: stretch;  /* âœ… This makes all child containers equal height */
+  }
+  
+  
+  .ex-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+
+.experience-sub-title {
+    color:rgb(56, 179, 95);
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+#experience .details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Keep content at top */
+    flex: 1;
+    min-width: 350px;
+    max-width: 500px;
+    padding: 2rem;
+    background-color: rgb(24, 21, 21);
+    border-radius: 2rem;
+    border: rgb(163, 163, 163) 0.1rem solid;
+    text-align: center;
+  }
+  
+  
+.experience-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+
+  .article-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem;
+    text-align: left;
+  }
+  
+  
+
+  article {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 10rem; /* Tweak between 10rem - 12rem based on look */
+  }
+  
+  
+
+article .icon{
+    cursor: default;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Projects Section */
+
+#projects {
+    position: relative;
+}
+
+.project-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .projects-flex-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+.color-container {
+    border-color: rgb(163, 163, 163);
+    background: rgb(24, 21, 21);
+}
+
+.project-img {
+    border-radius: 1rem;
+    width: 100%;
+    height: 200px;    /* Fixed height for all images */
+    object-fit: cover; /* Makes sure the image fills without stretching */
+}
+
+.project-title {
+    margin: 1rem 0;
+    color:azure;
+    font-size: 1.5rem;
+}
+.project-btn {
+    border-color: rgb(163, 163, 163);
+}
+
+#projects .btn-container {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #projects .details-container {
+    flex: 1 1 300px;     /* Allows the card to grow, shrink, and sets its initial width to 300px */
+    max-width: 320px;    /* Prevents the card from stretching beyond 320px */
+    padding: 1rem;       /* Adds space inside the card around its content */
+    background-color: rgb(24, 21, 21);  /* Sets the card background color */
+    border-radius: 2rem; /* Rounds the corners of the card */
+    border: rgb(163, 163, 163) 0.1rem solid; /* Adds a thin solid border with specified color */
+    text-align: center;  /* Centers the text inside the card */
+    display: flex;       /* Makes the card a flex container for its children */
+    flex-direction: column; /* Stacks child elements vertically */
+    justify-content: flex-start; /* Aligns child elements at the top of the card */
+    gap: 1rem;           /* Adds space between child elements inside the card */
+}
+
+/* Contact Section */
+
+#contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+  }
+  
+  .contact-info-upper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    border: rgb(163, 163, 163) 0.1rem solid;
+    background: rgb(24, 21, 21);
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+    gap: 2rem;
+    max-width: 700px;
+    height: 80px;
+    box-sizing: border-box;
+  }
+  
+  .contact-info-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .contact-info-container p {
+    font-size: 1.1rem;
+  }
+  
+  .contact-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+/* FOOTER SECTION */   
+
+footer {
+    height: 26vh;
+    margin: 0 1rem;
+}
+footer p{
+    text-align: center;
+}

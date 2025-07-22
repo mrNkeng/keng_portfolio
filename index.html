@@ -1,0 +1,373 @@
+<!--
+option + shift + downArrow will duplicate the types line to the line below
+-->
+
+<!-- exclamation point and enter give basic html boilerplate code  -->
+<!DOCTYPE html> <!--Declares the document type and version of HTML -->
+<html lang = "en">
+<head>
+    <meta charset="UTF-8"> <!-- Sets the character encoding to UTF-8, supports most characters --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Makes the page responsive by setting the width to the device width and default zoom to 1.0.-->
+    <title>My Portfolio</title>
+    <!-- Below is how we reference style sheets AKA lining the files  -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body> <!--starts visible part of the page-->
+    <nav id="desktop-nav"> <!--Start a navigation bar with the ID desktop-nav-->
+    <div class="logo">Aminkeng Nkeng</div>
+    <div> <!-- used to group other HTML elements together-->
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    </nav>
+    <!-- Hamburger navigation for mobile view -->
+    <nav id="hamburger-nav">
+        <!-- Site logo -->
+        <div class="logo">Aminkeng Nkeng</div>
+
+        <!-- Wrapper for icon and menu links -->
+        <div class="hamburger-menu">
+            
+            <!-- Hamburger icon that toggles the menu when clicked -->
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span> <!-- 1st line -->
+                <span></span> <!-- 2nd line -->
+                <span></span> <!-- 3rd line -->
+            </div>
+
+            <!-- Menu links shown/hidden when hamburger is clicked -->
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 
+    Profile section with a profile picture and intro text.
+    -->
+    <section id ="profile">
+    <div class="section__pic-container"> <!-- Container for the profile picture -->
+        <img src="./assets/profile-pic.png" alt="Aminkeng Nkeng profile picture" class="profile-pic">
+    </div>
+    <div class = "section__text">
+        <p class = "section__text__p1"> Hello, I'm </p>
+        <h1 class = "title">A. Nkeng</h1>
+        <p class = "section__text__p2"> Software Engineer</p>
+        <div class = "btn-container">
+            <button class = "btn btn-color-2" onclick="window.open('./assets/baseResume.pdf')">
+                Download CV   
+            </button>
+            <button class = "btn btn-color-1" onclick="location.href='./#contact'"> <!-- leads to contact page -->
+                Contact Info  
+            </button>
+        </div>
+        <div id="socials-container">
+            <img src="./assets/linkedin.png" 
+            alt="My linkedin profile"
+            class="icon" 
+            onclick="location.href='https://www.linkedin.com/in/ankeng/'">
+
+            <img src="./assets/github.png" 
+            alt="My Github profile"
+            class="icon" 
+            onclick="location.href='https://github.com/mrNkeng'">
+        </div>
+    </div>
+    </section>
+    <section id="about"> <!-- About Me section starts -->
+        <p class="section__text__p1">Get To Know More</p> <!-- Section subtitle -->
+        <h1 class="title">About Me</h1> <!-- Section title -->
+        <div class="about-containers"> <!-- Flex container for image and details -->
+          <div class="section__pic-container"> <!-- Container for About -->
+            <img 
+                src="./assets/about-pic.png" 
+                alt="Profile picture"
+                class = "about-pic"
+                />
+        </div>
+        <div class = "about-details-container">
+            <div class = "about-containers">
+                <div class = "details-container">
+                    <img 
+                        src="./assets/experience.png" 
+                        alt="Experience icon"
+                        class= "icon"
+                />
+                <h3>Experience</h3>
+                <p>2+ years <br />Software Engineering</p>
+            </div>  
+            <div class = "details-container">
+                <img 
+                    src="./assets/education.png" 
+                    alt="Education icon"
+                    class= "icon"
+                />
+                <h3>Education</h3>
+                <p>B.Sc. Computer Science <br />M.Sc Computer Science (2027)</p>
+            </div>
+        </div>
+        <div class="text-container">
+        <p>
+            Currently pursuing a Master’s degree in Computer Science with a focus 
+            on Machine Learning and Artificial Intelligence. I hold a Bachelor’s degree 
+            in Computer Science and am driven by a passion for software engineering. I am 
+            actively seeking full-time software engineering roles, bringing strong problem-solving 
+            skills and a commitment to delivering efficient solutions.
+        </p>
+        </div>
+    </div>
+    <img 
+        src="./assets/arrow.png" 
+        alt="Arrow icon" class="icon arrow"
+        onclick="location.href='./#experience'"
+        />
+    </section>
+
+    <section id="experience">
+        <div class="ex-container">
+            <p class="section__text__p1">Explore My</p>
+            <h1 class="title">Experience</h1>
+            <div class="experience-details-container">
+                <div class="experience-containers">
+                    <div class="details-container">
+                        <h2 class="experience-sub-title">Frontend Development</h2>
+                        <div class="article-container">
+                            <article>
+                                <img 
+                                src="./assets/checkmark.png" 
+                                alt="Experience Icon"
+                                class="icon"
+                                />
+                                <div>
+                                    <h3>HTML</h3>
+                                    <p>Basic</p>
+                                </div>
+                            </article>
+
+                            <article>
+                                <img 
+                                src="./assets/checkmark.png" 
+                                alt="Experience Icon"
+                                class="icon"
+                                />
+                                <div>
+                                    <h3>CSS</h3>
+                                    <p>Basic</p>
+                                </div>
+                            </article>
+
+                            <article>
+                                <img 
+                                src="./assets/checkmark.png" 
+                                alt="Experience Icon"
+                                class="icon"
+                                />
+                                <div>
+                                    <h3>JavaScript</h3>
+                                    <p>Basic</p>
+                                </div>
+                            </article>
+                            <article>
+                                <img 
+                                src="./assets/checkmark.png" 
+                                alt="Experience Icon"
+                                class="icon"
+                                />
+                                <div>
+                                    <h3>TypeScript</h3>
+                                    <p>Basic</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="details-container">
+                        <h2 class="experience-sub-title">Backend Development</h2>
+                        <div class="article-container">
+                            <article>
+                                <img 
+                                src="./assets/checkmark.png" 
+                                alt="Experience Icon"
+                                class="icon"
+                                />
+                                <div>
+                                    <h3>Java</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </article>
+
+                            <article>
+                                <img 
+                                src="./assets/checkmark.png" 
+                                alt="Experience Icon"
+                                class="icon"
+                                />
+                                <div>
+                                    <h3>C++</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </article>
+
+                            <article>
+                                <img 
+                                src="./assets/checkmark.png" 
+                                alt="Experience Icon"
+                                class="icon"
+                                />
+                                <div>
+                                    <h3>Python</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </article>
+
+                            <article>
+                                <img 
+                                src="./assets/checkmark.png" 
+                                alt="Experience Icon"
+                                class="icon"
+                                />
+                                <div>
+                                    <h3>Node JS</h3>
+                                    <p>Basic</p>
+                                </div>
+                            </article>
+
+                            <article>
+                                <img 
+                                src="./assets/checkmark.png" 
+                                alt="Experience Icon"
+                                class="icon"
+                                />
+                                <div>
+                                    <h3>Git</h3>
+                                    <p>Intermediate</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img 
+            src="./assets/arrow.png" 
+            alt="Arrow icon" class="icon arrow"
+            onclick="location.href='./#projects'"
+            />
+        </div>    
+    </section>
+
+    <section id="projects">
+        <p class="section__text__p1">Browse My Recent</p>
+        <h1 class="title">Projects</h1>
+        <div class="project-container">
+            <div class="projects-flex-container">
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/project-1.png" 
+                            alt="Project 1"
+                            class="project-img"
+                            />
+                        </div>
+                        <h2 class="experience-sub-title project-title">Data System</h2>
+                        <div class="btn-container">
+                            <button 
+                                class="btn btn-color-2 project-btn" 
+                                onclick="location.href='https://github.com/mrNkeng/CPP_Projects/tree/master/hashMap_proj4'"
+                                >
+                                Github
+                            </button>
+                        </div>
+                    </div>
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img 
+                            src="./assets/project-2.png" 
+                            alt="Project 2"
+                            class="project-img"
+                            />
+                        </div>
+                        <h2 class="experience-sub-title project-title">Forecast Engine</h2>
+                        <div class="btn-container">
+                            <button 
+                                class="btn btn-color-2 project-btn" 
+                                onclick="location.href='https://github.com/mrNkeng/python_proj'"
+                                >
+                                Github
+                            </button>
+                        </div>
+                    </div>
+                    <div class="details-container color-container">
+                        <div class="article-container">
+                            <img src="./assets/project-3.png" 
+                            alt="Project 3"
+                            class="project-img"
+                            />
+                        </div>
+                        <h2 class="experience-sub-title project-title">Portfolio Site</h2>
+                        <div class="btn-container">
+                            <button 
+                                class="btn btn-color-2 project-btn" 
+                                onclick="location.href='https://github.com/mrNkeng/keng_portfolio'"
+                                >
+                                Github
+                            </button>
+                            <button 
+                                class="btn btn-color-2 project-btn" 
+                                onclick="location.href='https://github.com/mrNkeng/keng_portfolio'"
+                                >
+                                Live Demo
+                            </button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <img 
+            src="./assets/arrow.png" 
+            alt="Arrow icon" class="icon arrow"
+            onclick="location.href='./#contact'"
+            />
+    </section>
+
+    <section id="contact">
+        <p class="section__text__p1">Get in Touch</p>
+        <h1 class="title">Contact Me</h1>
+      
+        <div class="contact-info-upper-container">
+          <div class="contact-info-container">
+            <img src="./assets/email.png" alt="Email icon" class="icon contact-icon" />
+            <p><a href="mailto:aminkeng1104@gmail.com">aminkeng1104@gmail.com</a></p>
+          </div>
+      
+          <div class="contact-info-container">
+            <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+            <p><a href="https://www.linkedin.com/in/ankeng/">LinkedIn</a></p>
+          </div>
+        </div>
+    </section>
+      
+    <footer>
+        <nav>
+            <div class="nav-links-containe">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul> 
+            </div>
+        </nav>
+        <p>Copyright &#169; 2025 Aminkeng Nkeng. All Rights Reserved.</p>
+    </footer>
+      
+
+    <!-- Load JavaScript file for interactivity like menu toggle -->
+    <script src="script.js"></script>
+
+</body> 
+</html>
