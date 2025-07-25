@@ -180,8 +180,13 @@ a:hover {
   #profile {
     justify-self: center;
     gap: 5rem;
-    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: fit-content;
   }
+
 
   .section__pic-container {
     display: flex;
